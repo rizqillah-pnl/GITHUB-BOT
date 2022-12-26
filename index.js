@@ -6,9 +6,10 @@ const FILE_PATH = './data.json';
 
 const makeCommit = n => {
   if(n==0) return simpleGit().push();
+  const res = [jsonfile.readFile(FILE_PATH)];
 
-  const x = 20;
-  const y = 8;
+  const x = Math.floor(Math.random()*54);
+  const y = Math.floor(Math.random()*12);
   const DATE = moment().subtract(1, 'y').add(1,'d').add(x, 'w').add(y,'d').format();
 
   const data = {
@@ -16,8 +17,10 @@ const makeCommit = n => {
   }
   console.log(DATE);
 
-  jsonfile.writeFile(FILE_PATH, data, ()=>{
-    simpleGit().add([FILE_PATH]).commit(DATE, {'--date':DATE},makeCommit.bind(this, n--));
+  res.push(data);
+
+  jsonfile.writeFile(FILE_PATH, res, ()=>{
+    simpleGit().add([FILE_PATH]).commit(DATE, {'--date':DATE},makeCommit.bind(this, --n));
   });
 }
 
