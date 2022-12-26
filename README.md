@@ -23,7 +23,7 @@ Start the code
 
 ```bash
   npm run start
-  OR
+  #OR
   node index.js
 ```
 
