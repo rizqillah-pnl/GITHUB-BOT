@@ -22,6 +22,8 @@ Install dependencies
 Start the code
 
 ```bash
+  npm run start
+  OR
   node index.js
 ```
 

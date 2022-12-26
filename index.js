@@ -1,7 +1,6 @@
 const jsonfile = require('jsonfile');
 const moment = require('moment');
 const simpleGit = require('simple-git');
-// import {random} from 'random';
 const FILE_PATH = './data.json';
 let i = 1;
 
