@@ -1,11 +1,34 @@
-# HACK GITHUB CONS
-## How to Run?
-<strong>Cara Menjalankan :</strong>
-<ul>
-  <li>Buka Git Bash atau terminal dalam folder</li>
-  <li>Ketik npm i</li>
-  <li>Kemudian ketik node index.js</li>
-</ul>
+# HACK GITHUB CONSTRIBUTiONS
+## Run Locally
 
-###  That's it
-## Enjoy
+Clone the project
+
+```bash
+  git clone https://github.com/rizqillah-pnl/GITHUB-BOT.git
+```
+
+Go to the project directory
+
+```bash
+  cd GITHUB-BOT
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the code
+
+```bash
+  node index.js
+```
+
+    
+That's it, Enjoy Code!
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
