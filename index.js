@@ -7,9 +7,9 @@ let i = 1;
 const makeCommit = n => {
   if(n==0) return simpleGit().push();
 
-  const x = Math.floor(Math.random()*30);
-  const y = Math.floor(Math.random()*11);
-  const minY = Math.floor(Math.random()*3)+2;
+  const x = Math.floor(Math.random()*7);
+  const y = Math.floor(Math.random()*365);
+  const minY = Math.floor(Math.random()*5)+3;
   const DATE = moment().subtract(minY, 'y').add(1,'d').add(x, 'w').add(y,'d').format();
 
   // console.log(DATE);
@@ -23,6 +23,6 @@ const makeCommit = n => {
   });
 }
 
-makeCommit(500);
+makeCommit(200);
 
 
