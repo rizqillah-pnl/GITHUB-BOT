@@ -9,7 +9,7 @@ const makeCommit = n => {
 
   const x = Math.floor(Math.random()*7);
   const y = Math.floor(Math.random()*365);
-  const minY = Math.floor(Math.random()*5)+3;
+  const minY = Math.floor(Math.random()*15)+8;
   const DATE = moment().subtract(minY, 'y').add(1,'d').add(x, 'w').add(y,'d').format();
 
   // console.log(DATE);
@@ -23,6 +23,6 @@ const makeCommit = n => {
   });
 }
 
-makeCommit(200);
+makeCommit(100);
 
 
