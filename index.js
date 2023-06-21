@@ -5,12 +5,13 @@ const FILE_PATH = './data.json';
 let i = 1;
 
 const makeCommit = n => {
-  if(n==0) return simpleGit().push();
+  if (n == 0) return simpleGit().push();
 
-  const x = Math.floor(Math.random()*7);
-  const y = Math.floor(Math.random()*365);
-  const minY = Math.floor(Math.random()*15)+8;
-  const DATE = moment().subtract(minY, 'y').add(1,'d').add(x, 'w').add(y,'d').format();
+  const x = Math.floor(Math.random() * 7);
+  const y = Math.floor(Math.random() * 365);
+  // Atur Tahun Disini
+  const minY = Math.floor(Math.random() * 1);
+  const DATE = moment().subtract(minY, 'y').add(1, 'd').add(x, 'w').add(y, 'd').format();
 
   // console.log(DATE);
   const data = {
@@ -18,11 +19,11 @@ const makeCommit = n => {
   }
   console.log(`${i++} |  ${DATE}`);
 
-  jsonfile.writeFile(FILE_PATH, data, ()=>{
-    simpleGit().add([FILE_PATH]).commit(DATE, {'--date':DATE},makeCommit.bind(this, --n));
+  jsonfile.writeFile(FILE_PATH, data, () => {
+    simpleGit().add([FILE_PATH]).commit(DATE, { '--date': DATE }, makeCommit.bind(this, --n));
   });
 }
 
-makeCommit(100);
+makeCommit(500);
 
 
